@@ -5,7 +5,8 @@ import { BiSearch } from 'react-icons/bi'
 import { MdOutlineNotificationsNone } from 'react-icons/md'
 
 export const Navbar = () => {
-  const [activeList, setActiveList] = useState(-1)
+  const [activeList, setActiveList] = useState(1)
+  const [leftBarDisplay, setLeftBarDisplay] = useState('hidden')
 
   const List = [
     {id: 1, name: "Dashboard"},
@@ -25,11 +26,11 @@ export const Navbar = () => {
 
         <ul className="hidden md:flex gap-4 text-xs items-center">
           {
-            List.map((list, id) => (
+            List.map((list) => (
               <li 
-                className={`${activeList === id ? "bg-[#eff0f2]" : ""} p-2 rounded-md cursor-pointer`}
-                onClick={() => handleActiveList(id)}
-                key={id}>{list.name}</li>
+                className={`${activeList === list.id ? "bg-[#eff0f2]" : ""} p-2 rounded-md cursor-pointer`}
+                onClick={() => handleActiveList(list.id)}
+                key={list.id}>{list.name}</li>
             ))
           }
         </ul>
@@ -56,8 +57,54 @@ export const Navbar = () => {
         </div>
       </div>
 
-      <div className="w-8 border-2 rounded-md border-gray-400 text-gray-400 h-8 md:hidden flex justify-center items-center text-2xl">
+      <div
+ onClick={() => {
+          leftBarDisplay === 'block' ? setLeftBarDisplay('hidden') : setLeftBarDisplay('block')
+        }}
+
+        className="z-50 w-8 border-2 rounded-md border-gray-400 text-gray-400 h-8 md:hidden flex justify-center items-center text-2xl">
         <GoGrabber />   
+      </div>
+
+
+      <div 
+      className={`${leftBarDisplay} fixed top-0 bottom-0 left-[30%] right-0 md:hidden backdrop-blur-md bg-white/30`}>
+
+       <ul className="mt-20 flex flex-col gap-4 text-xs items-center mx-4">
+          {
+            List.map((list) => (
+              <li 
+                className={`${activeList === list.id ? "bg-[#eff0f2]" : ""} p-2 rounded-md cursor-pointer w-full flex justify-center items-center `}
+                onClick={() => handleActiveList(list.id)}
+                key={list.id}>{list.name}</li>
+            ))
+          }
+        </ul>
+
+         <div className="flex flex-col items-center gap-4 text-xs mx-4 mt-20">
+        <div className="relative  w-full">
+          
+        <input type="search" placeholder="Search" className="border-2 rounded-md py-2 w-full placeholder:px-10"/>
+
+        <div className="absolute left-5 top-3 text-gray-400">
+          <BiSearch />
+        </div>
+
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="text-2xl text-gray-400 absolute top-6 left-5">
+          <MdOutlineNotificationsNone />
+          </div>
+
+          <div className="w-8 h-8 rounded-full overflow-hidden absolute bottom-6 left-5">
+            <img src={User} alt="" />
+          </div>
+          <div className="w-8 h-8 rounded-full overflow-hidden absolute bottom-6 right-6">
+            <img src={Logo} alt="" />
+          </div>
+
+        </div>
+      </div>
       </div>
     </div>
   )
