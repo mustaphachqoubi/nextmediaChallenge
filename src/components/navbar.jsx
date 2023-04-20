@@ -68,7 +68,7 @@ export const Navbar = () => {
 
 
       <div 
-      className={`${leftBarDisplay} fixed top-0 bottom-0 left-[30%] right-0 md:hidden backdrop-blur-md bg-white/30`}>
+      className={`${leftBarDisplay} fixed top-0 bottom-0 left-[30%] right-0 md:hidden backdrop-blur-lg shadow-lg bg-white/30 z-40`}>
 
        <ul className="mt-20 flex flex-col gap-4 text-xs items-center mx-4">
           {
@@ -92,7 +92,7 @@ export const Navbar = () => {
 
         </div>
         <div className="flex items-center gap-2">
-          <div className="text-2xl text-gray-400 absolute top-6 left-5">
+          <div className="text-2xl text-gray-400 absolute top-6 left-5 hover:bg-slate-200 rounded-full p-2">
           <MdOutlineNotificationsNone />
           </div>
 
