@@ -1,2 +1,3 @@
-export { Navbar} from './Navbar'
-export { HeroBar} from './HeroBar'
+export { Navbar } from './Navbar.jsx'
+export { HeroBar } from './HeroBar.jsx'
+export { Candidates } from './Candidates.jsx'

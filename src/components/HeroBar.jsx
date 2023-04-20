@@ -9,13 +9,13 @@ export const HeroBar = () => {
   return (
     <div className="p-10 flex flex-col gap-3">
       <div className="flex gap-5 text-gray-400 text-xs font-semibold">
-        <div>
+        <div className="cursor-pointer">
           Jobs
         </div>
         <div>
           >
         </div>
-        <div>
+        <div className="cursor-pointer">
           Engineering
         </div>
       </div>
