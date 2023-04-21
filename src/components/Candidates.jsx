@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Interview, Applied, PhoneScreen, Offer, Disqualified } from './CandidatesComponents'
 
 export const Candidates = () => {
   const [selectedId, setSelectedId] = useState(3)
@@ -6,6 +7,7 @@ export const Candidates = () => {
   const handleSelectedId = (id) => {
     setSelectedId(id)
   }
+
 
   const List = [
     {id: 1, name: "Applied", notif: 2},
@@ -15,6 +17,7 @@ export const Candidates = () => {
     {id: 5, name: "Disqualified", notif: 0},
   ]
 
+
   return (
     <div className="p-10 flex flex-col gap-2">
       <h1 className="font-semibold">Candidates</h1>
@@ -22,7 +25,9 @@ export const Candidates = () => {
       <div className="flex text-xs font-semibold text-gray-400 flex-wrap justify-center md:justify-start">
         {
           List.map((list) => (
-            <div key={list.id} onClick={() => handleSelectedId(list.id)} className={`border-b-2 items-center cursor-pointer flex gap-3 p-2 items-c-block ${list.id === selectedId ? 'border-b-2 border-[#6f47ea] text-[#6f47ea]' : ''} `}>
+            <div key={list.id} onClick={() => {
+              handleSelectedId(list.id)
+            }} className={`hover:bg-gray-100 border-b-2 items-center cursor-pointer flex gap-3 p-2 items-c-block ${list.id === selectedId ? 'border-b-2 border-[#6f47ea] text-[#6f47ea]' : ''} `}>
           {list.name}
       
         {list.notif === 0 ? null : (
@@ -38,6 +43,12 @@ export const Candidates = () => {
           ))
         }
 
+      </div>
+
+      <div>
+        {
+         selectedId === 1 ? (<Applied />) : selectedId === 2 ? (<PhoneScreen />) : selectedId === 3 ? (<Interview />) : selectedId === 4 ? (<Offer />) : (<Disqualified />)
+        }
       </div>
     </div>
   )
