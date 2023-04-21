@@ -1,6 +1,4 @@
-import {Navbar} from './components/Navbar.jsx'
-import {HeroBar} from './components/HeroBar.jsx'
-import {Candidates} from './components/Candidates.jsx'
+import {Navbar, HeroBar, Candidates} from './components'
 
 function App() {
   return (

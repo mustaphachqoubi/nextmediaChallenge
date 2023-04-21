@@ -4,7 +4,7 @@ import { GoGrabber } from "react-icons/go";
 import { BiSearch } from "react-icons/bi";
 import { MdOutlineNotificationsNone } from "react-icons/md";
 
-export const Navbar = () => {
+const Navbar = () => {
   const [activeList, setActiveList] = useState(1);
   const [leftBarDisplay, setLeftBarDisplay] = useState("hidden");
 
@@ -130,3 +130,5 @@ export const Navbar = () => {
     </div>
   );
 };
+
+export default Navbar
