@@ -1,3 +1,3 @@
-export { default as Navbar } from './Navbar'
-export { default as HeroBar } from './HeroBar'
-export { default as Candidates } from './Candidates'
+export { NavBar } from './NavBar'
+export { HeroBar } from './HeroBar'
+export { Candidates } from './Candidates'

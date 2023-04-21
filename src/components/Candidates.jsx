@@ -7,7 +7,7 @@ import {
   Disqualified,
 } from "./CandidatesComponents";
 
-const Candidates = () => {
+export const Candidates = () => {
   const [selectedId, setSelectedId] = useState(3);
 
   const handleSelectedId = (id) => {
@@ -73,4 +73,3 @@ const Candidates = () => {
   );
 };
 
-export default Candidates

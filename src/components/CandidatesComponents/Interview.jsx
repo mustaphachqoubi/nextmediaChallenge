@@ -61,14 +61,14 @@ export const Interview = () => {
             </h3>
             {person.isPhoneScreeningCompleted === true ? (
               <div className="flex items-center gap-2">
-                <div className="bg-green-500 p-2 rounded-full text-white">
+                <div className="bg-green-500 p-1 rounded-full text-white">
                   <MdOutlineDone />
                 </div>
                 <h3>Completed phone screening</h3>
               </div>
             ) : (
               <div className="flex items-center gap-2">
-                <div className="bg-red-500 p-2 rounded-full text-white">
+                <div className="bg-red-500 p-1 rounded-full text-white">
                   <AiOutlineClose />
                 </div>
                 <h3>phone screen not complete</h3>
